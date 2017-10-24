@@ -221,32 +221,32 @@
 
     46. Setelah itu terdapat pilihan untuk HTTP Proxy, kosongkan saja jika tidak dibutuhkan.
 
-    ![49](/image1/49.PNG)
+    ![49](/image1/49.png)
     <br>
 
     47. Lalu Anda pilih software yang akan diinstal ke ubuntu server Anda. Kelompok kami hanya memilih untuk menginstal standard system utilities dan openssh server.
 
-    ![50](/image1/50.PNG)
+    ![50](/image1/50.png)
     <br>
 
     48. Lalu pada pilihan install GRUB boot loader, pilih yes.
 
-    ![51](/image1/51.PNG)
+    ![51](/image1/51.png)
     <br>
 
     49. Setelah selesai, maka sistem akan restart dan akan muncul halaman login seperti pada gambar dibawah.
 
-    ![52](/image1/52.PNG)
+    ![52](/image1/52.png)
     <br>
 
     50. Setelah itu set IP untuk ubuntu server yang telah Anda buat. Disini kelompok kami menggunakan IP 10.151.36.207.
 
-    ![53](/image1/53.PNG)
+    ![53](/image1/53.png)
     <br>
     
     51. Lalu cek IP pada ubuntu server yang telah Anda buat dengan mengetikkan ifconfig.
 
-    ![54](/image1/54.PNG)
+    ![54](/image1/54.png)
     <br>
 
 
@@ -259,5 +259,8 @@ Pada OS Kali Linux 2017 sudah terinstal Hydra, jadi kelompok kami tidak perlu un
     * Langkah pertama Anda harus membuat sebuah file yang memuat beberapa password yang akan dicoba. Kelompok kami membuat file bernama "password.txt".
     * Ketikkan <b>hydra -l target2 -P 'password.txt' 10.151.36.207 ssh</b>. Setelah itu maka akan dilakukan brute force ke target tersebut.
 
-    ![54](/image3/1.PNG)
+    ![54](/image3/1.png)
     <br>
+
+2. Ncrack
+Pada OS kali Linux
