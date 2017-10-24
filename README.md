@@ -251,7 +251,157 @@
 
 
 * ## Langkah instalasi OS Untuk Penetrasi
-OS untuk penetrasi yang kelompok kami gunakan adalah Kali Linux 2017. Kelompok kami menginstal kali linux menggunakan tools virtualbox.
+    OS untuk penetrasi yang kelompok kami gunakan adalah Kali Linux 2017. Kelompok kami menginstal kali linux menggunakan tools virtualbox.
+
+    * Buka terlebih dahulu virtualbox pada PC / laptop Anda, lalu buat virtual machine baru dengan mengklik tombol "new"
+
+    ![1](/image2/1.png)
+    <br>
+
+    * Lalu atur memory size menjadi 1024 MB
+
+    ![2](/image2/2.png)
+    <br>
+
+    * Lalu pilih "create a virtual hard disk now"
+
+    ![3](/image2/3.png)
+    <br>
+
+    * Pada hard disk file type, pilih VDI (VirtualBox Disk Image)
+
+    ![4](/image2/4.png)
+    <br>
+
+    * Lalu pilih "dynamically allocated" pada pilihan storage on physical hard disk.
+
+    ![5](/image2/5.png)
+    <br>
+
+    * Untuk size dari hard disknya, pilih 20 GB.
+
+    ![6](/image2/6.png)
+    <br>
+
+    * Lalu buka seting > storage. Pada optical drive, klik gambar CD untuk memilih image yang akan Anda install.
+
+    ![7](/image2/7.png)
+    <br>
+
+    * Setelah Anda pilih image yang akan Anda gunakan, disini kelompok kami menggunakan Kali Linux Light 2017, klik OK
+
+    ![8](/image2/8.png)
+    <br>
+
+    * Lalu masuk ke pilihan network, ganti adapter 1 > attached to menjadi "bridged adapter" supaya virtual machine yang Anda buat bisa mendapatkan IP sesuai subnet PC / laptop Anda.
+
+    ![9](/image2/9.png)
+    <br>
+
+    * Setelah semua settingan selesai, jalankan virtual machine yang baru saja Anda buat. Setelah itu pilih "install".
+
+    ![10](/image2/10.png)
+    <br>
+
+    * Pada pilihan bahasa, pilih English.
+
+    ![11](/image2/11.png)
+    <br>
+
+    * Lau pilih "other" pada territory or area.
+
+    ![12](/image2/12.png)
+    <br>
+
+    * Pilih Asia pada pilihan continet or region
+
+    ![13](/image2/13.png)
+    <br>
+
+    * Setelah itu pilih Indonesia
+
+    ![14](/image2/14.png)
+    <br>
+
+    * Setelah itu pilih United States untuk layout dari keyboard yang akan Anda gunakan.
+
+    ![15](/image2/15.png)
+    <br>
+
+    * Pilih American English pada pilihan keymap to use.
+
+    ![16](/image2/16.png)
+    <br>
+
+    * Lalu akan ada kolom untuk mengisi hostname. Kelompok kami menggunakan nama "kali" sebagai hostname.
+
+    ![17](/image2/17.png)
+    <br>
+
+    * Setelah itu akan ada pilihan domain name. Tidak usah di isi jika tidak perlu.
+
+    ![18](/image2/18.png)
+    <br>
+
+    * Setelah itu Anda diharuskan mengisi root password. Jika sudah, enter di continue.
+
+    ![19](/image2/19.png)
+    <br>
+
+    * Lalu masukkan kembali root password untuk verifikasi ulang.
+
+    ![20](/image2/20.png)
+    <br>
+
+    * Pilih western (Sumatra, Jakarta, Java, Wes and Central Kalimantan) untuk pengaturan waktu.
+
+    ![21](/image2/21.png)
+    <br>
+
+    * Pada pilihan partitioning, pilih "guided - use entire disk" supaya proses partisi lebih cepat.
+
+    ![22](/image2/22.png)
+    <br>
+
+    * Setelah itu pilih virtual hard disk yang anda gunakan.
+
+    ![23](/image2/23.png)
+    <br>
+
+    * Lalu pada pilihan partitioning scheme, pilih "all files in one partition".
+
+    ![24](/image2/24.png)
+    <br>
+
+    * Maka secara otomatis akan dibuatkan partisi untuk root (/) dan juga untuk swap area. Setelah itu pilih finish partitioning.
+
+    ![25](/image2/25.png)
+    <br>
+
+    * Akan muncul tampilan konfirmasi, tekan yes jika Anda sudah merasa partisi yang Anda lakukan adalah benar.
+
+    ![26](/image2/26.png)
+    <br>
+
+    * Lalu pilih yes pada pilihan use a network mirror.
+
+    ![27](/image2/27.png)
+    <br>
+
+    * Setelah itu pilih yes pada pilihan install grub boot loader
+
+    ![28](/image2/28.png)
+    <br>
+
+    * Pilih tempat untuk menginstal boot loadernya, pilih virtual hard disk yang Anda gunakan.
+
+    ![29](/image2/29.png)
+    <br>
+
+    * Setelah itu tunggu proses instalasi berjalan. Jika sudah selesai, maka pilih continue dan sistem akan melakukan restart virtual machine Anda.
+
+    ![30](/image2/30.png)
+    <br>
 
 * ## Langkah Instalasi SSH Server
 Kelompok kami menginstal SSH server langsung pada saat menginstal ubuntu server.
