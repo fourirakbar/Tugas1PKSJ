@@ -489,26 +489,33 @@ Pada OS kali Linux 2017 sudah terinstall Ncrack, jadi kelompok kami tidak perlu 
 * ### Pengamanan dengan konfigurasi Fail2ban 
     
     1. Buka Kali Linux kemudian ketik command dibawah ini untuk melakukan penyerangan. ```test``` merupakan username. Pada pengujian ini kami mencoba menebak username server dan salah hingga tiga kali.
-    ```
-    hydra -l test -P password.txt 10.151.36.207 ssh
-    ```
+        ```
+        hydra -l test -P password.txt 10.151.36.207 ssh
+        ```
     2. IP penyerang akan di ban selama 600 detik sesuai dengan konfigurasi fail2ban
     ![2](/image4/fail2ban3.png)
 
 * ### Pengamanan dengan konfigurasi SSH-server
-       
-    ![9](/image4/9.png)
+
+    1. Pada Ubuntu Server, buka konfigurasi SSH dengan menuliskan command berikut ini pada terminal
+        ```
+        $ sudo /etc/ssh/sshd_config
+        ```
+    2. Pada uji penetrasi ini, kami mengganti ```PasswordAuthentication``` menjadi ```no```. Tujuannya adalah server akan mengganti akses masuk menggunakan SSH Key dan memblokir akses dari komputer lain kecuali apabila IP tersebut sudah disetujui oleh server kita.
+    
+        ![10](/image4/10.png)
     <br>
     
-    ![10](/image4/10.png)
-    <br>
+    3. Lakukan restart dengan cara
+        ```
+        $ sudo service ssh restart
+        ```
     
-    ![11](/image4/11.png)
-    <br>
-    
+    4. Pada Kali Linux, lakukan penyerangan dengan Hydra seperti pada gambar dibawah ini
     ![12](/image4/12.png)
     <br>
     
+    5. Hasilnya akan muncul error dengan pemberitahuan bahwa server tidak support password authentication.
     ![13](/image4/13.png)
     <br>
     
