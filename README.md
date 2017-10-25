@@ -278,47 +278,47 @@ Kali Linux adalah sebuah distro linux yang merupakan sebuah OS pembaharuan dari 
 
     * Buka terlebih dahulu virtualbox pada PC / laptop Anda, lalu buat virtual machine baru dengan mengklik tombol "new"
 
-    ![1](/image2/1.png)
+    ![1](/image2/1.PNG)
     <br>
 
     * Lalu atur memory size menjadi 1024 MB
 
-    ![2](/image2/2.png)
+    ![2](/image2/2.PNG)
     <br>
 
     * Lalu pilih "create a virtual hard disk now"
 
-    ![3](/image2/3.png)
+    ![3](/image2/3.PNG)
     <br>
 
     * Pada hard disk file type, pilih VDI (VirtualBox Disk Image)
 
-    ![4](/image2/4.png)
+    ![4](/image2/4.PNG)
     <br>
 
     * Lalu pilih "dynamically allocated" pada pilihan storage on physical hard disk.
 
-    ![5](/image2/5.png)
+    ![5](/image2/5.PNG)
     <br>
 
     * Untuk size dari hard disknya, pilih 20 GB.
 
-    ![6](/image2/6.png)
+    ![6](/image2/6.PNG)
     <br>
 
     * Lalu buka seting > storage. Pada optical drive, klik gambar CD untuk memilih image yang akan Anda install.
 
-    ![7](/image2/7.png)
+    ![7](/image2/7.PNG)
     <br>
 
     * Setelah Anda pilih image yang akan Anda gunakan, disini kelompok kami menggunakan Kali Linux Light 2017, klik OK
 
-    ![8](/image2/8.png)
+    ![8](/image2/8.PNG)
     <br>
 
     * Lalu masuk ke pilihan network, ganti adapter 1 > attached to menjadi "bridged adapter" supaya virtual machine yang Anda buat bisa mendapatkan IP sesuai subnet PC / laptop Anda.
 
-    ![9](/image2/9.png)
+    ![9](/image2/9.PNG)
     <br>
 
     * Setelah semua settingan selesai, jalankan virtual machine yang baru saja Anda buat. Setelah itu pilih "install".
@@ -331,7 +331,7 @@ Kali Linux adalah sebuah distro linux yang merupakan sebuah OS pembaharuan dari 
     ![11](/image2/11.png)
     <br>
 
-    * Lau pilih "other" pada territory or area.
+    * Lalu pilih "other" pada territory or area.
 
     ![12](/image2/12.png)
     <br>
@@ -460,37 +460,43 @@ Pada OS kali Linux 2017 sudah terinstall Ncrack, jadi kelompok kami tidak perlu 
     * Informasi yang didapatkan dari gambar sebelumnya juga sama dengan apa yang kami dapatkan dari penggunaan tools hydra, yaitu host dengan IP 10.151.36.207 dan loginnya "target2", dan juga passwordnya adalah "password" 
 
 # Uji Penetrasi 2
-### Tugas:
+#### Tugas:
 * Instal fail2ban pada Ubuntu server yang telah diinstal SSH 
 * Konfigurasikan SSH server agar tidak menggunakan setting default
 * Lakukan uji penetrasi 2 dengan tools yang sama seperti uji penetrasi 1
 
+* ### Langkah Instalasi Fail2ban pada Ubuntu Server  
+    1.  Lakukan update sebelum menginstal fail2ban dengan cara mengetikkan:  
+        ```
+        $ sudo apt-get update
+        ``` 
+    
+    2.  Selanjutnya install fail2ban dengan syntax dibawah ini:
+        ```
+        $ sudo apt-get install fail2ban
+        ```
 
-* ## Langkah Instalasi Fail2ban pada Ubuntu Server    
-    ![1](/image4/1.png)
+    3. Buka file ```jail.conf``` untuk mengubah konfigurasi sesuai dengan apa yang diinginkan. Pada uji penetrasi 2 ini, kami mengubah konfigurasi pada bagian ini
+        ```
+        bantime = 600
+        findtime = 120
+        maxretry = 3
+        ``` 
+        ![3](/image4/fail2ban2.png)
+        Keterangan : Konfigurasi diatas akan membuat penyerang mendapatkan ban selama 600 detik (10 menit) apabila melakukan attack terhadap server sebanyak 3 kali dalam kurun waktu 120 detik.
     <br>
+
+* ### Pengamanan dengan konfigurasi Fail2ban 
+    
+    1. Buka Kali Linux kemudian ketik command dibawah ini untuk melakukan penyerangan. ```test``` merupakan username. Pada pengujian ini kami mencoba menebak username server dan salah hingga tiga kali.
+    ```
+    hydra -l test -P password.txt 10.151.36.207 ssh
+    ```
+    2. IP penyerang akan di ban selama 600 detik sesuai dengan konfigurasi fail2ban
+    ![2](/image4/fail2ban3.png)
+
+* ### Pengamanan dengan konfigurasi SSH-server
        
-    ![2](/image4/2.png)
-    <br>
-    
-    ![3](/image4/3.png)
-    <br>
-    
-    ![4](/image4/4.png)
-    <br>
-    
-    ![5](/image4/5.png)
-    <br>
-    
-    ![6](/image4/6.png)
-    <br>
-    
-    ![7](/image4/7.png)
-    <br>
-    
-    ![8](/image4/8.png)
-    <br>
-    
     ![9](/image4/9.png)
     <br>
     
