@@ -5,15 +5,24 @@
 2. Fourir AKbar - 5114100115
 3. Afif Ridho Kamal Putra - 5114100173
 
-# Dasar Teori (Penjelasan OS dan Semua Tools yang digunakan)
+# Dasar Teori 
+**1. OS yang digunakan**
+##### ..* Ubuntu Server
+##### ..* Kali Linux
+Kali Linux adalah sebuah distro linux yang merupakan sebuah OS pembaharuan dari BackTRack dan dikembangkan oleh Offensive Security yang mempunyai fungsi untuk kebutuhan professional penetration tester. 
+
+**2. Tools yang digunakan**
+##### ..* Hydra
+##### ..* Ncrack
+##### ..* Fail2ban
 
 # Uji Penetrasi 1
 ### Tugas:
-**- Instal sebuah virtual OS dengan Ubuntu Server
-**- Install SSH server dengan konfigurasi default
-**- Instal satu lagi virtual OS dengan OS bebas
-**- Pastikan tools untuk SSH brute force attak sudah terinstall
-**- Lakukan uji penetrasi 1 dengan THC-Hydra atau Ncrack 
+..* Instal sebuah virtual OS dengan Ubuntu Server
+..* Install SSH server dengan konfigurasi default
+..* Instal satu lagi virtual OS dengan OS bebas
+..* Pastikan tools untuk SSH brute force attak sudah terinstall
+..* Lakukan uji penetrasi 1 dengan THC-Hydra atau Ncrack 
 
 * ## Langkah Instalasi Ubuntu Server
     Kelompok kami menggunakan tools VirtualBox untuk menginstal ubuntu server. Ubuntu server yang kelompok kami gunakan adalah ubuntu server 16.04.3
@@ -452,9 +461,54 @@ Pada OS kali Linux 2017 sudah terinstall Ncrack, jadi kelompok kami tidak perlu 
 
 # Uji Penetrasi 2
 ### Tugas:
-**- Instal fail2ban pada Ubuntu server yang telah diinstal S
-**- Konfigurasikan SSH server agar tidak menggunakan setting default
-**- Lakukan uji penetrasi 2 dengan tools yang sama seperti uji penetrasi 1
+..* Instal fail2ban pada Ubuntu server yang telah diinstal SSH 
+..* Konfigurasikan SSH server agar tidak menggunakan setting default
+..* Lakukan uji penetrasi 2 dengan tools yang sama seperti uji penetrasi 1
 
 
+* ## Langkah Instalasi Fail2ban pada Ubuntu Server    
+    ![1](/image4/1.PNG)
+    <br>
+       
+    ![2](/image4/2.PNG)
+    <br>
+    
+    ![3](/image4/3.PNG)
+    <br>
+    
+    ![4](/image4/4.PNG)
+    <br>
+    
+    ![5](/image4/5.PNG)
+    <br>
+    
+    ![6](/image4/6.PNG)
+    <br>
+    
+    ![7](/image4/7.PNG)
+    <br>
+    
+    ![8](/image4/8.PNG)
+    <br>
+    
+    ![9](/image4/9.PNG)
+    <br>
+    
+    ![10](/image4/10.PNG)
+    <br>
+    
+    ![11](/image4/11.PNG)
+    <br>
+    
+    ![12](/image4/12.PNG)
+    <br>
+    
+    ![13](/image4/13.PNG)
+    <br>
+    
+
+
+
+Referensi:
+http://www.kalilinuxindo.com/2014/04/pengenalan-distro-kali-linux.html
     
