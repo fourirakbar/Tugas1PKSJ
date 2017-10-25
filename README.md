@@ -467,43 +467,43 @@ Pada OS kali Linux 2017 sudah terinstall Ncrack, jadi kelompok kami tidak perlu 
 
 
 * ## Langkah Instalasi Fail2ban pada Ubuntu Server    
-    ![1](/image4/1.PNG)
+    ![1](/image4/1.png)
     <br>
        
-    ![2](/image4/2.PNG)
+    ![2](/image4/2.png)
     <br>
     
-    ![3](/image4/3.PNG)
+    ![3](/image4/3.png)
     <br>
     
-    ![4](/image4/4.PNG)
+    ![4](/image4/4.png)
     <br>
     
-    ![5](/image4/5.PNG)
+    ![5](/image4/5.png)
     <br>
     
-    ![6](/image4/6.PNG)
+    ![6](/image4/6.png)
     <br>
     
-    ![7](/image4/7.PNG)
+    ![7](/image4/7.png)
     <br>
     
-    ![8](/image4/8.PNG)
+    ![8](/image4/8.png)
     <br>
     
-    ![9](/image4/9.PNG)
+    ![9](/image4/9.png)
     <br>
     
-    ![10](/image4/10.PNG)
+    ![10](/image4/10.png)
     <br>
     
-    ![11](/image4/11.PNG)
+    ![11](/image4/11.png)
     <br>
     
-    ![12](/image4/12.PNG)
+    ![12](/image4/12.png)
     <br>
     
-    ![13](/image4/13.PNG)
+    ![13](/image4/13.png)
     <br>
     
 
