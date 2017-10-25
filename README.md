@@ -7,22 +7,22 @@
 
 # Dasar Teori 
 **1. OS yang digunakan**
-##### ..* Ubuntu Server
-##### ..* Kali Linux
+##### * Ubuntu Server
+##### * Kali Linux
 Kali Linux adalah sebuah distro linux yang merupakan sebuah OS pembaharuan dari BackTRack dan dikembangkan oleh Offensive Security yang mempunyai fungsi untuk kebutuhan professional penetration tester. 
 
 **2. Tools yang digunakan**
-##### ..* Hydra
-##### ..* Ncrack
-##### ..* Fail2ban
+##### * Hydra
+##### * Ncrack
+##### * Fail2ban
 
 # Uji Penetrasi 1
 ### Tugas:
-..* Instal sebuah virtual OS dengan Ubuntu Server
-..* Install SSH server dengan konfigurasi default
-..* Instal satu lagi virtual OS dengan OS bebas
-..* Pastikan tools untuk SSH brute force attak sudah terinstall
-..* Lakukan uji penetrasi 1 dengan THC-Hydra atau Ncrack 
+* Instal sebuah virtual OS dengan Ubuntu Server
+* Install SSH server dengan konfigurasi default
+* Instal satu lagi virtual OS dengan OS bebas
+* Pastikan tools untuk SSH brute force attak sudah terinstall
+* Lakukan uji penetrasi 1 dengan THC-Hydra atau Ncrack 
 
 * ## Langkah Instalasi Ubuntu Server
     Kelompok kami menggunakan tools VirtualBox untuk menginstal ubuntu server. Ubuntu server yang kelompok kami gunakan adalah ubuntu server 16.04.3
@@ -461,9 +461,9 @@ Pada OS kali Linux 2017 sudah terinstall Ncrack, jadi kelompok kami tidak perlu 
 
 # Uji Penetrasi 2
 ### Tugas:
-..* Instal fail2ban pada Ubuntu server yang telah diinstal SSH 
-..* Konfigurasikan SSH server agar tidak menggunakan setting default
-..* Lakukan uji penetrasi 2 dengan tools yang sama seperti uji penetrasi 1
+* Instal fail2ban pada Ubuntu server yang telah diinstal SSH 
+* Konfigurasikan SSH server agar tidak menggunakan setting default
+* Lakukan uji penetrasi 2 dengan tools yang sama seperti uji penetrasi 1
 
 
 * ## Langkah Instalasi Fail2ban pada Ubuntu Server    
