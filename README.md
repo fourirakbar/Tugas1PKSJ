@@ -1,6 +1,20 @@
 # Pendahuluan
+
+**Anggota Kelompok**
+1. Aviananda Dwirahma - 5114100085
+2. Fourir AKbar - 5114100115
+3. Afif Ridho Kamal Putra - 5114100173
+
 # Dasar Teori (Penjelasan OS dan Semua Tools yang digunakan)
+
 # Uji Penetrasi 1
+### Tugas:
+**- Instal sebuah virtual OS dengan Ubuntu Server
+**- Install SSH server dengan konfigurasi default
+**- Instal satu lagi virtual OS dengan OS bebas
+**- Pastikan tools untuk SSH brute force attak sudah terinstall
+**- Lakukan uji penetrasi 1 dengan THC-Hydra atau Ncrack 
+
 * ## Langkah Instalasi Ubuntu Server
     Kelompok kami menggunakan tools VirtualBox untuk menginstal ubuntu server. Ubuntu server yang kelompok kami gunakan adalah ubuntu server 16.04.3
     
@@ -435,3 +449,12 @@ Pada OS kali Linux 2017 sudah terinstall Ncrack, jadi kelompok kami tidak perlu 
     <br>
 
     * Informasi yang didapatkan dari gambar sebelumnya juga sama dengan apa yang kami dapatkan dari penggunaan tools hydra, yaitu host dengan IP 10.151.36.207 dan loginnya "target2", dan juga passwordnya adalah "password" 
+
+# Uji Penetrasi 2
+### Tugas:
+**- Instal fail2ban pada Ubuntu server yang telah diinstal S
+**- Konfigurasikan SSH server agar tidak menggunakan setting default
+**- Lakukan uji penetrasi 2 dengan tools yang sama seperti uji penetrasi 1
+
+
+    
