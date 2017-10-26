@@ -8,13 +8,18 @@
 # Dasar Teori 
 **1. OS yang digunakan**
 ##### * Ubuntu Server
+Ubuntu server adalah sebuah sistem operasi linux berbasis debian yang digunakan untuk membangun sebuah server.
+
 ##### * Kali Linux
 Kali Linux adalah sebuah distro linux yang merupakan sebuah OS pembaharuan dari BackTRack dan dikembangkan oleh Offensive Security yang mempunyai fungsi untuk kebutuhan professional penetration tester. 
 
 **2. Tools yang digunakan**
 ##### * Hydra
+Hydra adalah sebuah <i>tools</i> untuk membobol <i>remote authentication service</i> dengan metode <i>brute-force attack</i> Hydra dapat melakukan serangan dengan menggunakan <i>dictionary</i> (kamus) terhadap lebuh dari 50 protokol termasuk telnet, ftp, http, https, smb, beberapa databases, and masih banyak lagi. 
 ##### * Ncrack
+Ncrack adalah sebuah <i>tools</i> untuk membobol autentikasi di jaringan dengan kecepatan tinggi. Ncrack dibuat untuk membantu perusahaan mengamankan jaringan mereka dengan proaktif mencoba semua <i>host</i> dan perangkat jaringan yang memiliki <i>password</i> yang lemah. Ahli keamanan (bidang IT) juga mengandalkan ncrack saat meng-audit klien mereka.
 ##### * Fail2ban
+Fail2Ban adalah sebuah layanan yang membuat aturan yang otomatis mengubah iptables pada configurasi firewall berdasarkan percobaan dari banyaknya login yang gagal. dan ini akan mempersilahkan server tersebut (yang dipasang fail2ban) untuk mengharamkan percobaan akses tanpa intervensi dari pemilik server.
 
 # Uji Penetrasi 1
 ### Tugas:
@@ -495,27 +500,81 @@ Pada OS kali Linux 2017 sudah terinstall Ncrack, jadi kelompok kami tidak perlu 
     2. IP penyerang akan di ban selama 600 detik sesuai dengan konfigurasi fail2ban
     ![2](/image4/fail2ban3.png)
 
+* ### Konfigurasi SSH untuk login dengan SSH keys dibanding dengan menggunakan password.
+    Menggunakan password untuk mengakses SSH server adalah sesuatu yang kurang aman. jika ada salah satu user yang menggunakan password yang lemah untuk masuk, maka server tersebut tidak akan terjamin keamanannya. untuk menghindari hal ini, gunakan autentikasi ssh key tanpa menggunakan password.
+    
+    ##### Generate SSH keys pada klien
+    untuk meng-generate SSH key pada mesin klien, jalankan command berikut:
+
+    ````
+    cd ~/.ssh
+    ssh-keygen -t rsa
+    ````
+    Tekan enter pada setiap pertanyaan. setelah itu akan terbentuk dua file baru ```id_rsa.pub``` (public key) dan ```id_rsa``` (private key).
+
+    ##### buat folder SSH pada server
+    pada server buat folder ssh di home
+    ```
+    mkdir -p ~/.ssh/
+    ```
+
+    ##### Copy file public key ke server
+    ```
+    scp -P "ssh-port" ~/.ssh/id_dsa.pub username@serverip-address:~/.ssh
+    ```
+    
+    ##### Update file public key pada server
+    ```
+    cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+    chmod 700 .ssh
+    chmod 600 .ssh/authorized_keys
+    rm .ssh/id_rsa.pub
+    ```
+
+    Sekarang klien dapat login ssh ke server tanpa menggunakan password.
+
 * ### Pengamanan dengan konfigurasi SSH-server
 
-    1. Pada Ubuntu Server, buka konfigurasi SSH dengan menuliskan command berikut ini pada terminal
+    Pada Ubuntu Server, buka konfigurasi SSH dengan menuliskan command berikut ini pada terminal
         ```
         $ sudo /etc/ssh/sshd_config
         ```
-    2. Pada uji penetrasi ini, kami mengganti ```PasswordAuthentication``` menjadi ```no```. Tujuannya adalah server akan mengganti akses masuk menggunakan SSH Key dan memblokir akses dari komputer lain kecuali apabila IP tersebut sudah disetujui oleh server kita.
     
-        ![10](/image4/10.png)
+    ##### Menghilangkan password authentication
+    Pada uji penetrasi ini, kami mengganti ```PasswordAuthentication``` menjadi ```no```. Tujuannya adalah server akan mengganti akses masuk menggunakan SSH Key dan memblokir akses dari komputer lain kecuali apabila IP tersebut sudah disetujui oleh server kita.
+    
+    ![10](/image4/10.png)
+
+    ##### Mengubah default Port
+    pada <i>defaultnya</i>, kebanyakan dari server menggunakan port 22 untuk koneksi SSH.
+    ubah default port dari 22 ke port yang masih belum dipakai servicenya misal 8908:
+    ```
+    Port 8908
+    ```
+    ##### Gunakan SSH2
+    SSH1 (protocol 1) mengandung banyak kerentanan keamanan. menggunakan SSH2 (protocol 2) sangatlah direkomendasikan. untuk lebih jelasnya baca http://www.snailbook.com/faq/ssh-1-vs-2.auto.html
+    ```
+    Protocol 2
+    ```
+    ##### Non-aktifkan root login
+    kebanyakan serangan menggunakan root untuk login ke server dengan SSH, ubah konfigurasi pada line PermitRootLogin
+    ```
+    PermitRootLogin
+    ```
+    untuk lebih lengkapnya tentang mengamankan SSH server silahkan buka: https://devops.profitbricks.com/tutorials/secure-the-ssh-server-on-ubuntu/
+
     <br>
     
-    3. Lakukan restart dengan cara
+    ##### Lakukan restart dengan cara
         ```
         $ sudo service ssh restart
         ```
     
-    4. Pada Kali Linux, lakukan penyerangan dengan Hydra seperti pada gambar dibawah ini
+    ##### Pada Kali Linux, lakukan penyerangan dengan Hydra seperti pada gambar dibawah ini
     ![12](/image4/12.png)
     <br>
     
-    5. Hasilnya akan muncul error dengan pemberitahuan bahwa server tidak support password authentication.
+    ##### Hasilnya akan muncul error dengan pemberitahuan bahwa server tidak support password authentication.
     ![13](/image4/13.png)
     <br>
     
@@ -523,5 +582,8 @@ Pada OS kali Linux 2017 sudah terinstall Ncrack, jadi kelompok kami tidak perlu 
 
 
 Referensi:
-http://www.kalilinuxindo.com/2014/04/pengenalan-distro-kali-linux.html
-    
+1.http://www.kalilinuxindo.com/2014/04/pengenalan-distro-kali-linux.html
+2.https://en.wikipedia.org/wiki/Ubuntu_(operating_system)#Ubuntu_Server
+3.http://sectools.org/tool/hydra/
+4.https://nmap.org/ncrack/
+5.https://www.digitalocean.com/community/tutorials/how-to-protect-ssh-with-fail2ban-on-ubuntu-14-04
